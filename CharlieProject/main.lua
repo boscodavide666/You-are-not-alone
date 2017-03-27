@@ -1,31 +1,23 @@
+local background = require "modules/bg"
+local player =  require "modules/player"
+
 function love.load(arg)
---sfondi
-local bg = require "modules/bg"
---giocatore
-local player = require "modules/player"
---scritte
-local font = require "modules/font"
+player.load()
+scale = 3
+circleTransition = love.graphics.newImage("assets/Image/transition4.png")
 end
 
 function love.update(dt)
-
-move()
-anim(dt)
-
+background.move(player.vel, player.location, player.posY)
+--while scale > 0 do
+scale = scale - dt
+--end
 end
 
 function love.draw()
+love.graphics.draw(background.startBg, background.posX, background.posY)
+love.graphics.draw(player.img, player.posX, player.posY)
 
+love.graphics.draw(circleTransition, love.graphics.getWidth()/2, love.graphics.getHeight()/2, 0, scale, scale, love.graphics.getWidth()/2, love.graphics.getHeight()/2)
 
-  --disegno background
-drawBg(player.location)
-  --opzioni
-love.graphics.setColor(255, 255, 255, 255)
-
-  --titolo
-drawText(player.location)
-  --giocatore
-love.graphics.draw(player.char01, player.spawnX, player.spawnY, 0, 3, 3)
-  --not
-drawNot(player.location)
 end

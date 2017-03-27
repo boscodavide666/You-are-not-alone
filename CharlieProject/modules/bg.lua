@@ -1,73 +1,49 @@
---background SCHERMATA INIZIALE che fondamentalmente è un quadratone nero formato da una tabella con i colori e le dimensioni
---di fatto inutile però mi sento megio ad averlo
+local bg = {}
 
-mainBg = {
-  r = 0,
-  g = 0,
-  b = 0,
-  a = 255,
-  sizeX = love.graphics.getWidth(),
-  sizey = love.graphics.getHeight()
-}
+bg.startBg = love.graphics.newImage("assets/Image/black_ground.png")
+bg.posX = -190
+bg.posY = 0
+bg.sizeX = bg.startBg:getWidth()
+bg.sizeY = bg.startBg:getHeight()
+bg.maxLeft = -800
+bg.maxRight = 400
 
-villageBg = {
-  r = 100,
-  g = 0,
-  b = 0,
-  a = 255,
-  sizeX = love.graphics.getWidth(),
-  sizey = love.graphics.getHeight()
 
-}
-
-quitBg = {
-  r = 0,
-  g = 0,
-  b = 100,
-  a = 255,
-  sizeX = love.graphics.getWidth(),
-  sizey = love.graphics.getHeight()
-
-}
-
-optionBg ={
-  r = 0,
-  g = 100,
-  b = 0,
-  a = 255,
-  sizeX = love.graphics.getWidth(),
-  sizey = love.graphics.getHeight()
-}
-
-function drawBg(int)
-  if int == 1 then
-    drawMainBg()
-  elseif int == 2 then
-    drawVillageBg()
-  elseif int == 0 then
-    drawQuitBg()
-  elseif int == 3 then
-    drawOptionBg()
-
+function bg.move(vel, location, player)
+  if location == 0 then
+    moveStartBg(vel, player)
+  else
+    moveOtherBg(vel)
   end
 end
 
-function drawMainBg()
-  love.graphics.setColor(mainBg.r, mainBg.g, mainBg.b, mainBg.a)
-  love.graphics.rectangle("fill", 0, 0, love.graphics.getWidth(), love.graphics.getHeight())
+function moveStartBg(vel, player)
+
+  if love.keyboard.isDown("left") then
+    bg.posX = bg.posX + vel
+  elseif love.keyboard.isDown("right") then
+    bg.posX = bg.posX - vel
+  end
+
+  if bg.posX <= bg.maxLeft then
+    bg.posX = bg.maxLeft
+  elseif bg.posX >= bg.maxRight then
+  bg.posX = bg.maxRight
+  end
+
 end
 
-function drawVillageBg()
-  love.graphics.setColor(villageBg.r, villageBg.g, villageBg.b, villageBg.a)
-  love.graphics.rectangle("fill", 0, 0, love.graphics.getWidth(), love.graphics.getHeight())
+function moveOtherBg(vel)
+  if love.keyboard.isDown("left") then
+    bg.posX = bg.posX + vel
+  elseif love.keyboard.isDown("right") then
+    bg.posX = bg.posX - vel
+  end
+  if love.keyboard.isDown("up") then
+    bg.posY = bg.posY + vel
+  elseif love.keyboard.isDown("down") then
+    bg.posY = bg.posY - vel
+  end
 end
 
-function drawQuitBg()
-  love.graphics.setColor(quitBg.r, quitBg.g, quitBg.b, quitBg.a)
-  love.graphics.rectangle("fill", 0, 0, love.graphics.getWidth(), love.graphics.getHeight())
-end
-
-function drawOptionBg()
-  love.graphics.setColor(optionBg.r, optionBg.g, optionBg.b, optionBg.a)
-  love.graphics.rectangle("fill", 0, 0, love.graphics.getWidth(), love.graphics.getHeight())
-end
+return bg
