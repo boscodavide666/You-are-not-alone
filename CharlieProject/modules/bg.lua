@@ -17,7 +17,7 @@ function bg.move(vel, location, player)
   end
 end
 
-local function moveStartBg(vel, player)
+function moveStartBg(vel, player)
 
   if love.keyboard.isDown("left") then
     bg.posX = bg.posX + vel
@@ -33,7 +33,7 @@ local function moveStartBg(vel, player)
 
 end
 
-local function moveOtherBg(vel)
+function moveOtherBg(vel)
   if love.keyboard.isDown("left") then
     bg.posX = bg.posX + vel
   elseif love.keyboard.isDown("right") then
