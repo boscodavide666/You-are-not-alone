@@ -31,10 +31,11 @@ elseif love.keyboard.isDown("down") then
 end
 
 if player.posX <= x2 + player.size then
-player.posX = x2 + player.size
+  player.location = player.location - 1
+  player.posX = love.graphics.getWidth() - player.size
 elseif player.posX > x1 - player.size then
-  player.posX = x1 - player.size
-
+  player.location = player.location + 1
+  player.posX = 0 + player.size
 end
 if player.posY >= y2 - player.size then
 player.posY = y2 - player.size

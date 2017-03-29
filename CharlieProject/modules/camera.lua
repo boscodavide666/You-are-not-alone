@@ -17,14 +17,14 @@ function camera.unset()
 end
 
 
-function camera.setPosition(x, x1, y, y1, y2)
+function camera.setPosition(x, y, x1, x2, y1, y2)
   camera.x = x
   camera.y = y
 
   if camera.x <= x1 then
     camera.x = x1
-  elseif camera.x > love.graphics.getWidth()/2 then
-    camera.x = love.graphics.getWidth()/2
+  elseif camera.x > x2 then
+    camera.x = x2
   end
 
   if camera.y >= y1 then
