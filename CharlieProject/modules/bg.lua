@@ -1,49 +1,47 @@
-local bg = {}
+local  bg = {}
 
-bg.startBg = love.graphics.newImage("assets/Image/black_ground.png")
-bg.posX = -190
+bg.img = nil
+bg.sizeX = 0
+bg.sizeY = 0
+bg.posX = 0
 bg.posY = 0
-bg.sizeX = bg.startBg:getWidth()
-bg.sizeY = bg.startBg:getHeight()
-bg.maxLeft = -800
-bg.maxRight = 400
+bg.sxBorder = 0
+bg.dxBorder = 0
+bg.upBorder = 0
+bg.downBorder = 0
+
+startBgImg = love.graphics.newImage("assets/Image/main1.png")
+startBgSizeX = startBgImg:getWidth()
+startBgSizeY = startBgImg:getHeight()
+startBgposX = - love.graphics.getWidth()/2
+startBgposy = 0
+startBgLeftBorder = -320
+startBgRightBorder = startBgSizeX - love.graphics.getWidth()/2
+startBgUpBorder = 0
+startBgDownBorder = love.graphics.getHeight()
+
+villageBgImg = love.graphics.newImage("assets/Image/villageBg.png")
 
 
-function bg.move(vel, location, player)
-  if location == 0 then
-    moveStartBg(vel, player)
-  else
-    moveOtherBg(vel)
-  end
+
+
+function bg.load()
+  bg.img = startBgImg
+  bg.sizeX = startBgSizeX
+  bg.sizeY = startBgSizeY
+  bg.posX = startBgposX
+  bg.posY = startBgposy
+  bg.sxBorder = startBgLeftBorder
+  bg.dxBorder = startBgRightBorder
+  bg.upBorder = startBgUpBorder
+  bg.downBorder = startBgDownBorder
 end
 
-function moveStartBg(vel, player)
-
-  if love.keyboard.isDown("left") then
-    bg.posX = bg.posX + vel
-  elseif love.keyboard.isDown("right") then
-    bg.posX = bg.posX - vel
-  end
-
-  if bg.posX <= bg.maxLeft then
-    bg.posX = bg.maxLeft
-  elseif bg.posX >= bg.maxRight then
-  bg.posX = bg.maxRight
-  end
-
+function bg.draw()
+  love.graphics.draw(bg.img, bg.posX, bg.posY, 0, 1, 1)
+  --love.graphics.draw(drawable, x, y, r, sx, sy, ox, oy, kx, ky)
 end
 
-function moveOtherBg(vel)
-  if love.keyboard.isDown("left") then
-    bg.posX = bg.posX + vel
-  elseif love.keyboard.isDown("right") then
-    bg.posX = bg.posX - vel
-  end
-  if love.keyboard.isDown("up") then
-    bg.posY = bg.posY + vel
-  elseif love.keyboard.isDown("down") then
-    bg.posY = bg.posY - vel
-  end
-end
+
 
 return bg
