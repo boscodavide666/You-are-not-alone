@@ -62,11 +62,40 @@ function loadVillageBg()
   bg.downCamBorder = 640
 end
 
+exitBgImg = love.graphics.newImage("assets/Image/exitbg.png")
+exitBgSizeX = exitBgImg:getWidth()
+exitBgSizeY = exitBgImg:getHeight()
+exitBgposX = 0
+exitBgposy = 0
+exitBgLeftBorder = 0
+exitBgRightBorder = love.graphics.getWidth()
+exitBgUpBorder = 0
+exitBgDownBorder = love.graphics.getHeight()
+
+function loadExitBg()
+  bg.img = exitBgImg
+  bg.sizeX = exitBgSizeX
+  bg.sizeY = exitBgSizeY
+  bg.posX = exitBgposX
+  bg.posY = exitBgposy
+  bg.sxBorder = exitBgLeftBorder
+  bg.dxBorder = exitBgRightBorder
+  bg.upBorder = exitBgUpBorder
+  bg.downBorder = exitBgDownBorder
+  bg.sxCamBorder = 0
+  bg.dxCamBorder = 0
+  bg.upCamBorder = 0
+  bg.downCamBorder = 640
+end
+
+
 function bg.selectBg(int)
   if int == 0 then
     bg.loadMainBg()
   elseif int == 1 then
     loadVillageBg()
+  elseif int == -1 then
+    loadExitBg()
   else
 
   end

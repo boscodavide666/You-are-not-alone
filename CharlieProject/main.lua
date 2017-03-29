@@ -21,3 +21,13 @@ bg.draw()
 love.graphics.draw(player.img, player.posX, player.posY)
 camera.unset()
 end
+
+function love.keypressed(key)
+  if player.location == -1 and key == "y" then
+    love.event.quit()
+  elseif player.location == -1 and key == "n" then
+    player.location = 0
+    player.posX = love.graphics.getWidth()/2
+    player.posX = love.graphics.getHeight()/2
+  end
+end
