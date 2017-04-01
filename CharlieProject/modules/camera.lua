@@ -1,4 +1,4 @@
-local camera = {}
+camera = {}
 camera.x = 0
 camera.y = 0
 camera.scaleX = 1
@@ -16,22 +16,22 @@ function camera.unset()
   love.graphics.pop()
 end
 
-
 function camera.setPosition(x, y, x1, x2, y1, y2)
   camera.x = x
   camera.y = y
 
   if camera.x <= x1 then
-    camera.x = x1
-  elseif camera.x > x2 then
-    camera.x = x2
-  end
+  camera.x = x1
+elseif camera.x > x2 then
+  camera.x = x2
+end
 
-  if camera.y >= y1 then
-    camera.y = y1
-  elseif camera.y <= y2 then
-    camera.y = 0
-  end
+if camera.y >= y1 then
+  camera.y = y1
+elseif camera.y <= y2 then
+  camera.y = 0
+end
+
 end
 
 
