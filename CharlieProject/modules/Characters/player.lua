@@ -6,43 +6,45 @@ local map = require "modules/Maps/map"
  player = {}
 
 player.location = 0
+player.size = 0
 
 function player.load()
 
   spritesheet = love.graphics.newImage("assets/Image/skeleton.png")
-  speed = 10
+  speed = 8
   player.location = 0
+  player.size = 64
 
   mainChar = sodapop.newAnimatedSprite()
 
   mainChar:addAnimation('walk-right', {
     image = spritesheet, -- spritesheet da cui prendere le immagini
-    frameWidth = 64,             -- larghezza di uno sprite
-    frameHeight = 64,            -- altezza di uno sprite
+    frameWidth = player.size,             -- larghezza di uno sprite
+    frameHeight = player.size,            -- altezza di uno sprite
     frames = {                   -- definizione dei frame e della loro durata
       {2, 12, 9, 12, .1}
     }
   })
   mainChar:addAnimation('walk-left', {
     image = spritesheet,
-    frameWidth = 64,
-    frameHeight = 64,
+    frameWidth = player.size,
+    frameHeight = player.size,
     frames = {
       {2, 10, 9, 10, .1}
     }
   })
   mainChar:addAnimation('walk-up', {
     image = spritesheet,
-    frameWidth = 64,
-    frameHeight = 64,
+    frameWidth = player.size,
+    frameHeight = player.size,
     frames = {
       {2, 9, 9, 9, .1}
     }
   })
   mainChar:addAnimation('walk-down', {
     image = spritesheet,
-    frameWidth = 64,
-    frameHeight = 64,
+    frameWidth = player.size,
+    frameHeight = player.size,
     frames = {
       {2, 11, 9, 11, .1}
     }
@@ -85,19 +87,29 @@ function player.update(dt)
     end
 
     if canMove then
-      speed = 10
       mainChar.x = nextX
       mainChar.y = nextY
 
     if mainChar.x > map.myMap.width * map.myMap.tilewidth then
-      mainChar.x = 0 + 64
-      mainChar.y = love.graphics.getWidth()/2
+      mainChar.x = player.size
+      if player.location == 0 then
+
+        mainChar.y = 15 * map.myMap.tileheight
+      elseif player.location == -1 then
+        mainChar.y = love.graphics.getHeight()/2
+      end
       player.switch(1)
 
+
     elseif mainChar.x <= 0 then
-      mainChar.x = 640 - 64
+      if player.location == 0 then
+      mainChar.x = love.graphics.getWidth() - player.size
+    elseif player.location == 1 then
+      mainChar.x = 1280 - player.size
+    end
       mainChar.y = love.graphics.getWidth()/2
       player.switch(-1)
+
   end
 
   end

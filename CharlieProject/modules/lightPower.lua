@@ -21,6 +21,8 @@ function lightPower.update(x, y)
   lightPower.posY = y
 end
 
-
+function lightPower.draw()
+love.graphics.draw(lightPower.img, mainChar.x, mainChar.y, 0, 1, 1, lightPower.Ox, lightPower.Oy)
+end
 
 return lightPower
