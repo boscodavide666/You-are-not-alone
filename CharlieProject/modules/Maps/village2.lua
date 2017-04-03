@@ -325,12 +325,12 @@ return {
   layers = {
     {
       type = "imagelayer",
-      name = "bg",
+      name = "Livello immagine 2",
       visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      image = "village2.png",
+      image = "village.png",
       properties = {}
     },
     {
@@ -412,8 +412,8 @@ return {
     {
       type = "objectgroup",
       name = "Impassable",
-      visible = false,
-      opacity = 1,
+      visible = true,
+      opacity = 0,
       offsetx = 0,
       offsety = 0,
       draworder = "topdown",
@@ -712,9 +712,9 @@ return {
           type = "",
           shape = "rectangle",
           x = 864,
-          y = 1160,
+          y = 1192,
           width = 32,
-          height = 56,
+          height = 24,
           rotation = 0,
           visible = true,
           properties = {
@@ -727,9 +727,9 @@ return {
           type = "",
           shape = "rectangle",
           x = 864,
-          y = 1328,
+          y = 1344,
           width = 32,
-          height = 40,
+          height = 24,
           rotation = 0,
           visible = true,
           properties = {

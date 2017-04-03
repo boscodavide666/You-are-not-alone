@@ -77,9 +77,9 @@ function player.update(dt)
       if object.properties["Impassable"] == true then
       --Imp = true
         if ( nextX >= object.x  and
-          nextX < object.x + object.width and
-            nextY >= object.y  and
-             nextY < object.y + object.height  ) then
+          nextX - 8 < object.x + object.width and
+            nextY + 24 >= object.y  and
+             nextY + 16 < object.y + object.height  ) then
           canMove = false
           break
         end
@@ -109,9 +109,17 @@ function player.update(dt)
     end
       mainChar.y = love.graphics.getWidth()/2
       player.switch(-1)
+    end
 
-  end
-
+    if mainChar.y < 0 then
+      mainChar.x = 2560 / 2 + player.size
+      mainChar.y = 2560 - 100
+      player.switch(1)
+    elseif mainChar.y > 2560 + player.size then
+      mainChar.x = 928
+      mainChar.y = player.size
+      player.switch(-1)
+    end
   end
 
     mainChar:update(dt)

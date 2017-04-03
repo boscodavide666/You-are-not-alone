@@ -5,10 +5,12 @@ enemy = {}
 enemy.sizeX = 0
 enemy.sizeY = 0
 enemy.dir = 0
+local timer = 0
+local capTimer = 1
 
 function enemy.load(x, y)
 spritesheet = love.graphics.newImage("assets/Image/ghost.png")
-speed = 8
+speed = 1
 enemy.sizeX = 40
 enemy.sizeY = 46
 enemy.dir = 0
@@ -60,11 +62,14 @@ ghost:addAnimation('idle', {
 })
 
 ghost.x, ghost.y = x, y
+timeCap = 1
+timer = timeCap
 end
 
 function enemy.update(dt)
-local timeCap = 1
-local timer = timeCap
+
+  nextX, nextY = ghost.x, ghost.y
+  canMove = true
 
 if timer <= 0 then
   direction = love.math.random(1, 4)
@@ -75,12 +80,16 @@ end
 enemy.dir = direction
   if enemy.dir == 1 then
     ghost:switch('walk-up', true)
+    nextY = nextY - speed
   elseif enemy.dir == 2 then
     ghost:switch('walk-down', true)
+    nextY = nextY + speed
   elseif enemy.dir == 3 then
     ghost:switch('walk-left', true)
+    nextX = nextX - speed
   elseif enemy.dir == 4 then
     ghost:switch('walk-right', true)
+    nextX = nextX + speed
   else
     ghost:switch('idle', true)
   end
