@@ -7,9 +7,17 @@ lightPower.posY = 0
 lightPower.Ox = 0
 lightPower.Oy = 0
 
+lightPower.darknes = {}
+
+lightPower.darknes.r = 0
+lightPower.darknes.g = 0
+lightPower.darknes.b = 0
+lightPower.darknes.a = 255
+
+
 function lightPower.load(x, y)
   lightPower.img = love.graphics.newImage("Assets/Image/maskn.png")
-  lightPower.isOn = true
+  lightPower.isOn = false
   lightPower.posX = x
   lightPower.posY = y
   lightPower.Ox = 1280
@@ -19,6 +27,11 @@ end
 function lightPower.update(x, y)
   lightPower.posX = x
   lightPower.posY = y
+end
+
+function lightPower.drawDarkness(x, y)
+  love.graphics.setColor(lightPower.darknes.r, lightPower.darknes.g, lightPower.darknes.b, lightPower.darknes.a)
+love.graphics.rectangle("fill", 0, 0, x, y)
 end
 
 function lightPower.draw()

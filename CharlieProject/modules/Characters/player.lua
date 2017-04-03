@@ -117,17 +117,14 @@ function player.update(dt)
     mainChar:update(dt)
 end
 
+function player.draw()
+mainChar:draw()
+end
+
+
 function player.switch(int)
     love.timer.sleep(1)
     player.location = player.location + int
-end
-
-
-function player.draw()
-mainChar:draw()
-if Imp then
-  love.graphics.print("Impassable")
-end
 end
 
 return player

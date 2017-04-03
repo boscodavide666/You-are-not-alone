@@ -821,7 +821,7 @@ return {
       type = "objectgroup",
       name = "Impassable",
       visible = true,
-      opacity = 0.63,
+      opacity = 0,
       offsetx = 0,
       offsety = 0,
       draworder = "topdown",
