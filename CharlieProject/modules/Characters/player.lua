@@ -1,12 +1,13 @@
 local sodapop = require "modules/sodapop"
-local sti = require "modules/sti"
-local map = require "modules/Maps/map"
+--local sti = require "modules/sti"
+--local map = require "modules/Maps/map"
 
 
  player = {}
 
 player.location = 0
 player.size = 0
+player.deathCount = 0
 
 function player.load()
 
@@ -14,6 +15,7 @@ function player.load()
   speed = 8
   player.location = 0
   player.size = 64
+  player.deathCount = 0
 
   mainChar = sodapop.newAnimatedSprite()
 
@@ -53,7 +55,7 @@ function player.load()
   mainChar.x, mainChar.y = (map.myMap.width * map.myMap.tilewidth)/2, (map.myMap.height * map.myMap.tileheight)/2
 end
 
-function player.update(dt)
+function player.update(dt, x1, y1)
   nextX, nextY = mainChar.x, mainChar.y
   canMove = true
 
@@ -75,7 +77,6 @@ function player.update(dt)
 
         for k, object in pairs(map.myMap.objects) do
       if object.properties["Impassable"] == true then
-      --Imp = true
         if ( nextX >= object.x  and
           nextX - 8 < object.x + object.width and
             nextY + 24 >= object.y  and
@@ -121,9 +122,20 @@ function player.update(dt)
       player.switch(-1)
     end
   end
-
     mainChar:update(dt)
 end
+
+function player.die(dt, x, y)
+  if (mainChar.x >= x - 20 and mainChar.x <= x + 20 ) and (mainChar.y >= y - 20 and mainChar.y <= y + 20 ) then
+    love.timer.sleep(1)
+    player.location = 0
+    mainChar.x = 1280 / 2 + player.size
+    mainChar.y = 320
+    player.deathCount = player.deathCount + 1
+  end
+  end
+
+
 
 function player.draw()
 mainChar:draw()

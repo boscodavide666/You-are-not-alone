@@ -27,7 +27,7 @@ function map.update(dt, int)
   elseif int == -1 then
     map.tempMap = sti("modules/Maps/mapExit.lua")
   elseif int == 2 then
-    map.tempMap = sti("modules/Maps/dungeon02.lua")
+    map.tempMap = sti("modules/Maps/dungeon.lua")
   end
 
   map.myMap = map.tempMap

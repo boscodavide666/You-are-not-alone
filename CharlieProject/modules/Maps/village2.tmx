@@ -65,10 +65,10 @@
  <tileset firstgid="1332" name="chests" tilewidth="32" tileheight="32" tilecount="6" columns="2">
   <image source="../../assets/Image/LPC Base Assets/tiles/chests.png" width="64" height="96"/>
  </tileset>
- <imagelayer name="bg">
-  <image source="village2.png" width="1920" height="1920"/>
+ <imagelayer name="Livello immagine 2">
+  <image source="village.png" width="1920" height="1920"/>
  </imagelayer>
- <layer name="Alberi" width="60" height="60" visible="0">
+ <layer name="Alberi" width="60" height="60">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1220,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1221,1221,1221,1221,1221,1221,1221,1221,1221,1221,1222,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1226,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1227,1228,0,0,0,0,0,0,
@@ -132,7 +132,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup name="Impassable" visible="0">
+ <objectgroup name="Impassable" opacity="0">
   <properties>
    <property name="Impassable" type="bool" value="true"/>
   </properties>
@@ -231,12 +231,12 @@
     <property name="Impassable" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="25" x="864" y="1160" width="32" height="56">
+  <object id="25" x="864" y="1192" width="32" height="24">
    <properties>
     <property name="Impassable" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="26" x="864" y="1328" width="32" height="40">
+  <object id="26" x="864" y="1344" width="32" height="24">
    <properties>
     <property name="Impassable" type="bool" value="true"/>
    </properties>

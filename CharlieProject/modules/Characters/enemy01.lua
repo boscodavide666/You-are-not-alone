@@ -1,0 +1,87 @@
+local sodapop = require "modules/sodapop"
+
+enemy01 = {}
+
+enemy01.sizeX = 0
+enemy01.sizeY = 0
+enemy01.dir = 0
+enemy01.speed = 0
+enemy01.canMove = nil
+local timer  = 0
+local timecap = 1
+
+function enemy01.load(x, y)
+spritesheet = love.graphics.newImage("assets/Image/ghost.png")
+enemy01.speed = 8
+enemy01.sizeX = 40
+enemy01.sizeY = 46
+enemy01.dir = 0
+enemy01.canMove = true
+ghost01 = sodapop.newAnimatedSprite()
+
+ghost01:addAnimation('walk-right', {
+  image = spritesheet,
+  frameWidth = enemy01.sizeX,
+  frameHeight = enemy01.sizeY,
+  frames = {
+    {1, 4, 3, 4, .1}
+  }
+})
+
+ghost01:addAnimation('walk-left', {
+  image = spritesheet,
+  frameWidth = enemy01.sizeX,
+  frameHeight = enemy01.sizeY,
+  frames = {
+    {1, 2, 3, 2, .1}
+  }
+})
+
+ghost01:addAnimation('walk-up', {
+  image = spritesheet,
+  frameWidth = enemy01.sizeX,
+  frameHeight = enemy01.sizeY,
+  frames = {
+    {1, 1, 3, 1, .1}
+  }
+})
+
+ghost01:addAnimation('walk-down', {
+  image = spritesheet,
+  frameWidth = enemy01.sizeX,
+  frameHeight = enemy01.sizeY,
+  frames = {
+    {1, 3, 3, 3, .2}
+  }
+})
+
+ghost01:addAnimation('idle', {
+  image = spritesheet,
+  frameWidth = enemy01.sizeX,
+  frameHeight = enemy01.sizeY,
+  frames = {
+    {1, 3, 3, 3, .2}
+  }
+})
+
+ghost01.x, ghost01.y = x, y
+timer  = timecap
+end
+
+function enemy01.update(dt)
+if timer >= 0 then
+  ghost01.x = ghost01.x + enemy01.speed
+  timer = timer - dt
+elseif timer <= 0 then
+  timer = timecap
+  enemy01.speed = - enemy01.speed
+end
+
+ghost01:switch('idle', true)
+ghost01:update(dt)
+end
+
+function enemy01.draw()
+ghost01:draw()
+end
+return enemy01
