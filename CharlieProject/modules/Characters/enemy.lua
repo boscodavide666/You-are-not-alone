@@ -10,7 +10,7 @@ local capTimer = 1
 
 function enemy.load(x, y)
 spritesheet = love.graphics.newImage("assets/Image/ghost.png")
-speed = 1
+enemy.speed = 1
 enemy.sizeX = 40
 enemy.sizeY = 46
 enemy.dir = 0
@@ -80,16 +80,16 @@ end
 enemy.dir = direction
   if enemy.dir == 1 then
     ghost:switch('walk-up', true)
-    nextY = nextY - speed
+    nextY = nextY - enemy.speed
   elseif enemy.dir == 2 then
     ghost:switch('walk-down', true)
-    nextY = nextY + speed
+    nextY = nextY + enemy.speed
   elseif enemy.dir == 3 then
     ghost:switch('walk-left', true)
-    nextX = nextX - speed
+    nextX = nextX - enemy.speed
   elseif enemy.dir == 4 then
     ghost:switch('walk-right', true)
-    nextX = nextX + speed
+    nextX = nextX + enemy.speed
   else
     ghost:switch('idle', true)
   end
