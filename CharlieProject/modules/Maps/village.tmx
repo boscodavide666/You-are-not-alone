@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="60" tilewidth="32" tileheight="32" nextobjectid="252">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="60" tilewidth="32" tileheight="32" nextobjectid="256">
  <tileset firstgid="1" name="Ground" tilewidth="32" tileheight="32" tilecount="1024" columns="32">
   <image source="../../assets/Image/terrain.png" width="1024" height="1024"/>
   <terraintypes>
@@ -132,7 +132,7 @@
  <imagelayer name="Livello immagine 1">
   <image source="village.png" width="1920" height="1920"/>
  </imagelayer>
- <layer name="Alberi" width="60" height="60" visible="0">
+ <layer name="Alberi" width="60" height="60">
   <data encoding="csv">
 0,0,0,1037,1038,1039,0,0,0,0,1028,1029,1030,0,0,0,1025,1026,1027,0,1040,1041,1042,0,1158,0,0,0,0,0,0,0,0,1158,0,0,0,0,834,867,867,836,900,0,834,833,0,0,0,0,609,610,610,610,611,0,0,0,0,0,
 0,1025,1026,1027,0,1028,1029,1030,0,0,1034,1035,1036,1028,1029,1030,1031,1032,1033,1028,1029,1030,0,0,0,1158,0,0,0,0,0,0,1158,0,0,0,0,0,834,867,835,868,0,0,834,833,0,0,0,0,641,642,642,642,643,0,0,0,0,0,
@@ -196,7 +196,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1196,1198,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,272,273,273,273,273,273,273,273,273,273,273,273,273,274,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup name="Impassable">
+ <objectgroup name="Impassable" opacity="0">
   <properties>
    <property name="Impassable" type="bool" value="true"/>
   </properties>
@@ -927,7 +927,27 @@
     <property name="Impassable" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="251" x="1056" y="-24" width="432" height="48">
+  <object id="251" x="1056" y="-24" width="448" height="48">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="252" x="1888" y="192" width="56" height="192">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="253" x="1912" y="-24" width="24" height="1976">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="254" x="-24" y="1912" width="1992" height="48">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="255" x="-32" y="-48" width="2168" height="56">
    <properties>
     <property name="Impassable" type="bool" value="true"/>
    </properties>

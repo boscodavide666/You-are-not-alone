@@ -8,7 +8,7 @@ return {
   height = 60,
   tilewidth = 32,
   tileheight = 32,
-  nextobjectid = 252,
+  nextobjectid = 256,
   properties = {},
   tilesets = {
     {
@@ -416,7 +416,7 @@ return {
       y = 0,
       width = 60,
       height = 60,
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -2463,8 +2463,68 @@ return {
           shape = "rectangle",
           x = 1056,
           y = -24,
-          width = 432,
+          width = 448,
           height = 48,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["Impassable"] = true
+          }
+        },
+        {
+          id = 252,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1888,
+          y = 192,
+          width = 56,
+          height = 192,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["Impassable"] = true
+          }
+        },
+        {
+          id = 253,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1912,
+          y = -24,
+          width = 24,
+          height = 1976,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["Impassable"] = true
+          }
+        },
+        {
+          id = 254,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -24,
+          y = 1912,
+          width = 1992,
+          height = 48,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["Impassable"] = true
+          }
+        },
+        {
+          id = 255,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -32,
+          y = -48,
+          width = 2168,
+          height = 56,
           rotation = 0,
           visible = true,
           properties = {
