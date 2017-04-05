@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="left-down" width="40" height="40" tilewidth="64" tileheight="64" nextobjectid="184">
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="40" height="40" tilewidth="64" tileheight="64" nextobjectid="187">
  <tileset firstgid="1" name="base" tilewidth="64" tileheight="64" tilecount="140" columns="14">
-  <image source="../ROGUELIKE/base.png" width="896" height="640"/>
+  <image source="../tile_dungeon.png" width="896" height="640"/>
  </tileset>
  <layer name="map" width="40" height="40">
   <data encoding="csv">
@@ -47,7 +47,7 @@
 98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,59,60,99,100,101,61,98,98,98,98,98,98,98,59,60,61,98,98,98,98,98,98,98
 </data>
  </layer>
- <objectgroup name="impassable">
+ <objectgroup name="impassable" visible="0">
   <object id="28" x="66.6667" y="130.303" width="266.515" height="74.5455">
    <properties>
     <property name="Impassable" type="bool" value="true"/>
@@ -699,12 +699,12 @@
     <property name="Impassable" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="170" x="1267.5" y="2488.5" width="12.5" height="70.5">
+  <object id="170" x="1267.5" y="2488.5" width="14.1667" height="70.5">
    <properties>
     <property name="Impassable" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="171" x="1338" y="2489" width="16.5" height="71">
+  <object id="171" x="1338" y="2489" width="17.8333" height="71">
    <properties>
     <property name="Impassable" type="bool" value="true"/>
    </properties>
@@ -719,22 +719,22 @@
     <property name="Impassable" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="178" x="1239.5" y="2537" width="26" height="11.5">
+  <object id="178" x="1250.17" y="2529.33" width="24.3333" height="22.5">
    <properties>
     <property name="Impassable" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="179" x="1255.5" y="2522.5" width="10" height="11.5">
+  <object id="179" x="1258.5" y="2515.5" width="10" height="22.8333">
    <properties>
     <property name="Impassable" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="180" x="1357.5" y="2535.5" width="26" height="11.5">
+  <object id="180" x="1341.17" y="2540.83" width="44.3333" height="16.5">
    <properties>
     <property name="Impassable" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="181" x="1358.5" y="2522" width="10" height="11.5">
+  <object id="181" x="1341.5" y="2529.33" width="35.6667" height="13.1667">
    <properties>
     <property name="Impassable" type="bool" value="true"/>
    </properties>
@@ -747,6 +747,23 @@
   <object id="183" x="1966.15" y="918.742" width="32.591" height="19.894">
    <properties>
     <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="184" x="1229.17" y="2537.33" width="51.6667" height="20.5">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="185" x="1341.83" y="2504" width="25.6667" height="27.8333">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="canWalk" visible="0">
+  <object id="186" x="1282.33" y="2488" width="55.6667" height="72.3333">
+   <properties>
+    <property name="canWalk" type="bool" value="true"/>
    </properties>
   </object>
  </objectgroup>
