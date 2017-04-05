@@ -1,6 +1,5 @@
 local sodapop = require "modules/sodapop"
---local sti = require "modules/sti"
---local map = require "modules/Maps/map"
+local game = require "modules/game"
 
 
  player = {}
@@ -12,7 +11,7 @@ player.deathCount = 0
 function player.load()
 
   spritesheet = love.graphics.newImage("assets/Image/skeleton.png")
-  speed = 8
+  speed = 10
   player.location = 0
   player.size = 64
   player.deathCount = 0
@@ -87,6 +86,18 @@ function player.update(dt, x1, y1)
       end
     end
 
+    for k, object in pairs(map.myMap.objects) do
+  if object.properties["canWalk"] == false and not game.canGo  then
+    if ( nextX >= object.x  and
+      nextX - 8 < object.x + object.width and
+        nextY + 24 >= object.y  and
+         nextY + 16 < object.y + object.height  ) then
+      canMove = false
+      break
+    end
+  end
+end
+
     if canMove then
       mainChar.x = nextX
       mainChar.y = nextY
@@ -95,7 +106,7 @@ function player.update(dt, x1, y1)
       mainChar.x = player.size
       if player.location == 0 then
 
-        mainChar.y = 15 * map.myMap.tileheight
+        mainChar.y = 944
       elseif player.location == -1 then
         mainChar.y = love.graphics.getHeight()/2
       end
@@ -129,7 +140,7 @@ function player.die(dt, x, y)
   if (mainChar.x >= x - 20 and mainChar.x <= x + 20 ) and (mainChar.y >= y - 20 and mainChar.y <= y + 20 ) then
     love.timer.sleep(1)
     player.location = 0
-    mainChar.x = 1280 / 2 + player.size
+    mainChar.x = 1280 / 2
     mainChar.y = 320
     player.deathCount = player.deathCount + 1
   end

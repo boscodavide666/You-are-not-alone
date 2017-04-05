@@ -11,8 +11,13 @@ local enemy03 = require "modules/Characters/enemy03"
 local enemy04 = require "modules/Characters/enemy04"
 local enemy05 = require "modules/Characters/enemy05"
 local boy01 = require "modules/Characters/boy01"
+local boy02 = require "modules/Characters/boy02"
+local girl = require "modules/Characters/girl02"
+local guardian01 = require "modules/Characters/guardian01"
+local guardian02 = require "modules/Characters/guardian02"
+local x = 1
 local villageChief = require "modules/Characters/villageChief"
-font = love.graphics.newFont("assets/font/8-bit pusab.ttf", 12)
+font = love.graphics.newFont("assets/font/Cabanyal-Z.ttf", 24)
 
 
 function love.load(arg)
@@ -20,12 +25,16 @@ map.load()
 player.load()
 lightPower.load(mainChar.x - love.graphics.getWidth()/2, mainChar.y)
 game.load()
-boy01.load()
-villageChief.load()
+boy01.load(384, 956)
+boy02.load(1272, 1288)
+girl.load(1328, 842)
+guardian01.load(904, 32)
+guardian02.load(960, 32)
+villageChief.load(1576, 1416)
 enemy.load(602, 290)
-enemy01.load(1200, 2432)
+enemy01.load(1230, 2432)
 enemy02.load(1450, 2070)
-enemy03.load(684, 2066)
+enemy03.load(684, 2046)
 enemy04.load(530, 1250)
 enemy05.load(1250, 470)
 
@@ -37,12 +46,7 @@ function love.update(dt)
   map.update(dt, player.location)
   game.update(dt, player.location)
   player.update(dt)
-  player.die(dt, ghost.x, ghost.y)
-  player.die(dt, ghost01.x, ghost01.y)
-  player.die(dt, ghost02.x, ghost02.y)
-  player.die(dt, ghost03.x, ghost03.y)
-  player.die(dt, ghost04.x, ghost04.y)
-  player.die(dt, ghost05.x, ghost05.y)
+
  if game.isDungeon then
   enemy.update(dt)
   enemy01.update(dt)
@@ -50,20 +54,29 @@ function love.update(dt)
   enemy03.update(dt)
   enemy04.update(dt)
   enemy05.update(dt)
+  player.die(dt, ghost.x, ghost.y)
+  player.die(dt, ghost01.x, ghost01.y)
+  player.die(dt, ghost02.x, ghost02.y)
+  player.die(dt, ghost03.x, ghost03.y)
+  player.die(dt, ghost04.x, ghost04.y)
+  player.die(dt, ghost05.x, ghost05.y)
 elseif game.isVillage then
   boy01.update(dt)
+  boy02.update(dt)
+  girl.update(dt)
   villageChief.update(dt)
+  guardian01.update(dt)
+  guardian02.update(dt)
   game.interact(dt, mainChar.x, mainChar.y)
   end
   lightPower.update(mainChar.x, mainChar.y)
   camera.setPosition(mainChar.x-love.graphics.getWidth()/2, mainChar.y- love.graphics.getHeight()/2, map.sxBorder, map.dxBorder, map.downBorder, map.upBorder)
-
 end
 
 function love.draw()
 camera.set()
+love.graphics.setFont(font)
 map.draw()
-player.draw()
 
 if game.isDungeon then
 enemy.draw()
@@ -74,9 +87,16 @@ enemy04.draw()
 enemy05.draw()
 elseif game.isVillage then
 boy01.draw()
+boy02.draw()
+girl.draw()
 villageChief.draw()
+guardian01.draw()
+guardian02.draw()
 end
---
+
+player.draw()
+love.graphics.print(mainChar.x .. mainChar.y , mainChar.x, mainChar.y + 64)
+
 if game.isLightable and lightPower.isOn then
 lightPower.draw()
 elseif game.isLightable and lightPower.isOn == false then
@@ -85,10 +105,12 @@ end
 if player.location == 1 then
   treetop:draw()
 end
-if game.isTalking then
-game.talkBox(mainChar.x - 640, mainChar.y + 180, 1280, 1280)
+if player.location == 0 then
+  love.graphics.printf("YouSuck Counter " .. player.deathCount, 100, 600, love.graphics.getWidth(), "center")
 end
---love.graphics.print(ghost01.x , mainChar.x, mainChar.y - 64)
+if game.isTalking then
+love.graphics.printf(game.dialogue(game.interact(dt, mainChar.x, mainChar.y)), mainChar.x - 320, mainChar.y + 200, love.graphics.getWidth(), "left")
+end
 camera.unset()
 
 end

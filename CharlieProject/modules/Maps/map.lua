@@ -15,7 +15,6 @@ function map.load()
   map.dxBorder = map.myMap.width * map.myMap.tilewidth - love.graphics.getWidth()
   map.upBorder = 0
   map.downBorder = map.myMap.height * map.myMap.tilewidth - love.graphics.getHeight()
-
 end
 
 
@@ -23,11 +22,11 @@ function map.update(dt, int)
   if int == 0 then
      map.tempMap = sti("modules/Maps/basemain.lua")
   elseif int == 1 then
-    map.tempMap = sti("modules/Maps/village2.lua")
+    map.tempMap = sti("modules/Maps/village.lua")
   elseif int == -1 then
     map.tempMap = sti("modules/Maps/mapExit.lua")
   elseif int == 2 then
-    map.tempMap = sti("modules/Maps/dungeon.lua")
+    map.tempMap = sti("modules/Maps/dungeon2.lua")
   end
 
   map.myMap = map.tempMap

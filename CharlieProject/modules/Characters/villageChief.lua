@@ -4,14 +4,11 @@ villageChief = {}
 
 
 villageChief.size = 0
-villageChief.posX = 0
-villageChief.posY = 0
 
-function villageChief.load()
+
+function villageChief.load(x, y)
 spritesheet = love.graphics.newImage("assets/Image/Sage.png")
 villageChief.size = 64
-villageChief.posX = 1568
-villageChief.posY = 1184
 villageChiefChar = sodapop.newAnimatedSprite()
 
 villageChiefChar:addAnimation('idle', {
@@ -23,7 +20,7 @@ villageChiefChar:addAnimation('idle', {
   }
 })
 
-villageChiefChar.x, villageChiefChar.y = villageChief.posX, villageChief.posY
+villageChiefChar.x, villageChiefChar.y = x, y
 end
 
 function villageChief.update(dt)
