@@ -1,20 +1,27 @@
 local sodapop = require "modules/sodapop"
 local game = require "modules/game"
-
+local clue01 = require "modules/Clues/clue01"
+local clue02 = require "modules/Clues/clue02"
+local clue03 = require "modules/Clues/clue03"
+local clue04 = require "modules/Clues/clue04"
+local clue05 = require "modules/Clues/clue05"
 
  player = {}
 
 player.location = 0
 player.size = 0
 player.deathCount = 0
+player.speed = 10
+player.canMove = nil
 
 function player.load()
 
   spritesheet = love.graphics.newImage("assets/Image/skeleton.png")
-  speed = 10
+  player.speed = 10
   player.location = 0
   player.size = 64
   player.deathCount = 0
+  player.canMove = true
 
   mainChar = sodapop.newAnimatedSprite()
 
@@ -60,16 +67,16 @@ function player.update(dt, x1, y1)
 
     if(love.keyboard.isDown("up")) then
       mainChar:switch('walk-up', true)
-      nextY = nextY - speed
+      nextY = nextY - player.speed
     elseif (love.keyboard.isDown("down")) then
       mainChar:switch('walk-down', true)
-      nextY = nextY + speed
+      nextY = nextY + player.speed
     elseif (love.keyboard.isDown("left")) then
       mainChar:switch('walk-left', true)
-      nextX = nextX - speed
+      nextX = nextX - player.speed
     elseif (love.keyboard.isDown("right")) then
       mainChar:switch('walk-right', true)
-      nextX = nextX + speed
+      nextX = nextX + player.speed
     else
       mainChar:goToFrame(8)
     end
@@ -80,7 +87,8 @@ function player.update(dt, x1, y1)
           nextX - 8 < object.x + object.width and
             nextY + 24 >= object.y  and
              nextY + 16 < object.y + object.height  ) then
-          canMove = false
+        canMove = false
+
           break
         end
       end
@@ -92,7 +100,8 @@ function player.update(dt, x1, y1)
       nextX - 8 < object.x + object.width and
         nextY + 24 >= object.y  and
          nextY + 16 < object.y + object.height  ) then
-      canMove = false
+    canMove = false
+
       break
     end
   end
@@ -142,6 +151,12 @@ function player.die(dt, x, y)
     player.location = 0
     mainChar.x = 1280 / 2
     mainChar.y = 320
+    clue01.isRead = false
+    clue02.isRead = false
+    clue03.isRead = false
+    clue04.isRead = false
+    clue05.isRead = false
+    game.canGo = true
     player.deathCount = player.deathCount + 1
   end
   end

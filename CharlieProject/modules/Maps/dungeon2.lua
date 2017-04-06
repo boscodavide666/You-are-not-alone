@@ -2265,7 +2265,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["canWalk"] = true
+            ["canWalk"] = false
           }
         }
       }

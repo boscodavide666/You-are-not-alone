@@ -9,6 +9,7 @@ game.isVillage = nil
 game.isSpeaking = nil
 game.isEnd = nil
 game.canGo = nil
+game.isEnd = nil
 
 
 function game.load()
@@ -18,6 +19,7 @@ game.isDungeon = false
 game.isVillage = false
 game.isSpeaking = false
 game.canGo = false
+game.isEnd = false
 end
 
 function game.update(dt, int)
@@ -62,11 +64,6 @@ elseif (x1 >= 890 and x1 <= 960) and (y1 >= 60 and y1 <= 70 ) and game.canGo == 
     else
     game.isTalking = false
   end
-elseif game.isDungeon then
-  if (x1 >= 360 and x1 <= 420) and (y1 >= 930 and y1 <= 980 ) then
-  game.isTalking =true
-  return 1
-end
 end
 
 end
@@ -84,8 +81,5 @@ guardian01Char.x = 880
 guardian02Char.x = 980
 end
 
-function game.talkBox(posX, posY, width, height)
-love.graphics.rectangle("fill", posX, posY, width, height)
-end
 
 return game

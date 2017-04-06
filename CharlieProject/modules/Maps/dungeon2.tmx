@@ -760,10 +760,10 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="canWalk">
+ <objectgroup name="canWalk" opacity="0">
   <object id="186" x="1282.33" y="2488" width="55.6667" height="72.3333">
    <properties>
-    <property name="canWalk" type="bool" value="true"/>
+    <property name="canWalk" type="bool" value="false"/>
    </properties>
   </object>
  </objectgroup>
