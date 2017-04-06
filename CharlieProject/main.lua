@@ -21,8 +21,10 @@ local clue03 = require "modules/Clues/clue03"
 local clue04 = require "modules/Clues/clue04"
 local clue05 = require "modules/Clues/clue05"
 local villageChief = require "modules/Characters/villageChief"
-font = love.graphics.newFont("assets/font/Cabanyal-Z.ttf", 24)
+font = love.graphics.newFont("assets/font/8-bit pusab.ttf", 12)
 local ended = love.graphics.newImage("assets/Image/gameover.png")
+local dungSt = love.audio.newSource("assets/soundz/ot2.mp3", "stream")
+local otherSt = love.audio.newSource("assets/soundz/Ot1.mp3", "stream")
 
 
 function love.load(arg)
@@ -57,6 +59,13 @@ function love.update(dt)
   map.update(dt, player.location)
   game.update(dt, player.location)
   player.update(dt)
+  if game.isDungeon then
+    dungSt:play()
+    otherSt:stop()
+  else
+    otherSt:play()
+    dungSt:stop()
+  end
 
   if game.isVillage then
     boy01.update(dt)
@@ -112,7 +121,7 @@ function love.draw()
 camera.set()
 love.graphics.setFont(font)
 map.draw()
-player.draw()
+
 
 if game.isEnd then
 love.graphics.print("isEnd", mainChar.x, mainChar.y + 64)
@@ -127,6 +136,8 @@ enemy04.draw()
 enemy05.draw()
 end
 
+
+
 if game.isVillage then
 boy01.draw()
 boy02.draw()
@@ -134,11 +145,17 @@ girl.draw()
 villageChief.draw()
 guardian01.draw()
 guardian02.draw()
-treetop:draw()
   if game.isTalking then
   love.graphics.printf(game.dialogue(game.interact(dt, mainChar.x, mainChar.y)), mainChar.x - 320, mainChar.y + 200, love.graphics.getWidth(), "left")
   end
 end
+
+player.draw()
+
+if game.isVillage then
+treetop:draw()
+end
+
 
 if game.isLightable and lightPower.isOn then
 lightPower.draw()

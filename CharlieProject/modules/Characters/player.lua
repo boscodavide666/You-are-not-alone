@@ -16,7 +16,7 @@ player.canMove = nil
 
 function player.load()
 
-  spritesheet = love.graphics.newImage("assets/Image/skeleton.png")
+  spritesheet = love.graphics.newImage("assets/Image/player.png")
   player.speed = 10
   player.location = 0
   player.size = 64
