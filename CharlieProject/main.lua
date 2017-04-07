@@ -197,17 +197,6 @@ end
     end
   end
 end
---da cancellare
-if key == "d" then
-  player.location = 2
-  mainChar.x = 2560 / 2 + player.size
-  mainChar.y = 2560 - 100
-  clue01.isRead = true
-  clue02.isRead = true
-  clue03.isRead = true
-  clue04.isRead = true
-  clue05.isRead = true
-end
 
 if game.isEnd and key == "y" then
   love.event.quit()
