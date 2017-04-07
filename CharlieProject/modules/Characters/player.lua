@@ -11,13 +11,13 @@ player = {}
 player.location = 0
 player.size = 0
 player.deathCount = 0
-player.speed = 10
+player.speed = 0
 player.canMove = nil
 
 function player.load()
 
   spritesheet = love.graphics.newImage("assets/Image/Characters/player.png")
-  player.speed = 10
+  player.speed = 5
   player.location = 0
   player.size = 64
   player.deathCount = 0
