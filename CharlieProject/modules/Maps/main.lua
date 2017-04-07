@@ -19,7 +19,7 @@ return {
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      image = "../../assets/Image/main1.png",
+      image = "../../assets/Image/main.png",
       properties = {}
     },
     {
