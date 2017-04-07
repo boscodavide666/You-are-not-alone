@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="left-down" width="40" height="40" tilewidth="64" tileheight="64" nextobjectid="187">
  <tileset firstgid="1" name="base" tilewidth="64" tileheight="64" tilecount="140" columns="14">
-  <image source="../base.png" width="896" height="640"/>
+  <image source="../../assets/Image/dungtile.png" width="896" height="640"/>
  </tileset>
  <layer name="map" width="40" height="40">
   <data encoding="csv">
@@ -268,7 +268,11 @@
     <property name="Impassable" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="81" x="1347.95" y="2548.52" width="780.318" height="11.0303"/>
+  <object id="81" x="1347.95" y="2548.52" width="780.318" height="11.0303">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
   <object id="82" x="1461.17" y="2485.35" width="471.076" height="66.1667">
    <properties>
     <property name="Impassable" type="bool" value="true"/>

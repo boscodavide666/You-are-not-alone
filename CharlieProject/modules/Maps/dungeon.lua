@@ -769,7 +769,9 @@ return {
           height = 11.0303,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["Impassable"] = true
+          }
         },
         {
           id = 82,
