@@ -25,7 +25,8 @@ font = love.graphics.newFont("assets/font/Cabanyal-Z.ttf", 20)
 local ended = love.graphics.newImage("assets/Image/gameover.png")
 local dungSt = love.audio.newSource("assets/soundz/ot2.mp3", "stream")
 local otherSt = love.audio.newSource("assets/soundz/Ot1.mp3", "stream")
-
+local powersound = love.audio.newSource("assets/soundz/powersound.wav", "static")
+local powersoundend = love.audio.newSource("assets/soundz/powersoundend.wav", "static")
 
 function love.load(arg)
 timer = 60
@@ -52,7 +53,6 @@ clue04.load(2304, 320)
 clue05.load(320, 256)
 treetop = sti("modules/Maps/treetop.lua")
 end
-
 
 function love.update(dt)
 map.update(dt, player.location)
@@ -192,8 +192,12 @@ end
   if game.isLightable then
      if lightPower.isOn then
       lightPower.isOn = false
+
+      powersoundend:play()
     else
      lightPower.isOn = true
+     powersound:play()
+
     end
   end
 end
