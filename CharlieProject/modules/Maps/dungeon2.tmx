@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="40" height="40" tilewidth="64" tileheight="64" nextobjectid="187">
+ <tileset firstgid="1" name="base" tilewidth="64" tileheight="64" tilecount="140" columns="14">
+  <image source="../base.png" width="896" height="640"/>
+ </tileset>
+ <layer name="map" width="40" height="40">
+  <data encoding="csv">
+98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,
+98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,31,32,32,33,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,
+98,98,98,98,98,31,32,32,32,32,32,32,32,32,32,33,98,98,98,45,46,91,47,98,98,98,98,98,98,31,32,32,32,32,32,32,33,98,98,98,
+98,98,31,32,32,79,91,46,111,112,73,46,46,46,46,66,41,41,41,95,60,65,66,41,41,41,41,41,41,82,46,46,46,46,46,110,78,32,33,98,
+98,98,45,46,93,94,46,46,125,126,46,46,64,60,60,61,98,98,98,40,98,59,61,98,98,98,98,98,98,59,60,60,60,60,65,124,46,91,47,98,
+98,98,45,91,107,108,46,73,46,46,46,64,61,98,98,98,98,98,98,40,98,98,98,98,98,35,98,98,98,98,98,98,98,98,45,46,93,94,47,98,
+98,98,59,60,60,60,60,60,60,60,60,61,98,98,98,31,32,33,98,40,98,98,98,98,98,38,98,98,98,98,98,98,98,98,45,46,107,108,47,98,
+98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,45,110,66,41,80,41,41,41,41,41,80,41,41,41,41,41,41,41,41,82,46,46,91,47,98,
+98,98,98,98,98,98,98,31,32,33,98,98,98,98,98,45,124,47,98,40,98,98,98,98,98,40,98,98,98,98,98,98,98,98,45,46,64,60,61,98,
+98,98,98,98,98,98,98,45,73,78,32,32,33,98,98,45,93,47,98,40,98,98,98,98,98,40,98,98,98,98,98,98,98,98,59,60,61,98,98,98,
+98,98,98,98,98,98,98,45,46,46,110,91,47,98,98,45,91,47,98,76,41,41,63,98,98,40,98,98,98,31,32,33,98,98,98,98,98,98,98,98,
+98,98,98,98,98,98,98,45,93,94,124,46,47,98,98,59,60,61,98,98,98,98,76,41,41,80,41,41,41,96,94,47,98,98,98,98,98,98,98,98,
+98,98,98,98,98,98,98,45,107,108,46,73,47,98,98,98,98,98,98,98,98,98,98,98,98,39,98,98,98,59,70,61,98,98,98,98,98,98,98,98,
+98,98,98,98,98,98,98,45,46,111,112,46,47,98,98,98,98,98,98,98,98,98,98,98,98,50,98,98,98,98,84,98,98,98,98,31,32,33,98,98,
+98,98,98,98,98,98,98,45,46,125,126,91,47,98,98,98,98,98,98,98,31,32,33,98,98,98,98,98,98,98,53,98,98,98,62,82,91,47,98,98,
+98,98,98,98,98,98,98,45,46,64,60,60,61,98,98,98,98,98,98,98,45,46,66,41,41,41,41,41,41,41,80,41,41,41,77,59,60,61,98,98,
+98,98,98,98,98,98,98,59,70,61,98,98,98,98,98,98,98,98,98,98,45,46,47,98,98,98,98,98,98,98,50,98,98,98,98,98,98,98,98,98,
+98,98,98,98,98,98,98,98,40,98,98,98,98,98,98,98,98,31,32,32,88,89,90,32,32,33,98,98,98,31,32,32,33,98,98,98,98,98,98,98,
+98,98,98,98,98,98,98,98,40,98,98,98,98,98,98,98,98,45,46,46,102,103,104,46,46,47,98,98,98,45,46,91,47,98,98,98,98,98,98,98,
+98,98,98,98,98,31,32,32,69,32,32,33,98,98,98,98,98,59,60,60,116,117,118,60,60,61,98,98,98,59,70,60,61,98,98,98,98,98,98,98,
+98,98,98,98,98,45,91,46,46,46,46,47,98,98,98,98,98,98,98,98,45,93,47,98,98,98,98,98,98,98,40,98,98,98,98,98,98,98,98,98,
+98,98,98,98,98,45,93,94,110,46,46,78,32,32,32,32,33,98,98,98,45,46,47,98,98,98,98,98,98,98,40,98,98,98,98,98,98,98,98,98,
+98,98,98,98,98,45,107,108,124,46,46,64,60,60,60,65,47,98,98,98,59,70,61,98,98,98,98,98,98,98,40,98,98,98,98,98,98,98,98,98,
+98,98,98,98,98,45,91,46,46,46,46,47,98,98,98,45,47,98,98,98,98,84,98,98,98,98,98,31,32,32,69,32,32,33,98,98,98,98,98,98,
+98,98,98,98,98,59,60,60,60,60,60,61,98,98,98,45,47,98,98,98,98,84,98,98,98,98,98,45,91,93,94,46,46,47,98,98,98,98,98,98,
+98,98,98,98,98,98,98,98,98,98,98,98,98,98,31,79,78,33,98,98,98,84,98,98,98,98,98,45,46,107,108,64,70,61,98,98,98,98,98,98,
+98,98,98,98,98,98,98,98,98,98,98,31,32,32,79,46,91,47,98,98,31,69,33,98,98,98,98,45,111,112,64,61,40,98,98,98,98,98,98,98,
+98,98,98,98,98,98,98,98,98,31,32,79,46,64,60,60,60,61,98,98,45,94,47,98,98,98,98,45,125,126,47,98,40,98,98,98,98,98,98,98,
+98,98,98,98,98,31,32,32,32,79,46,64,60,61,98,98,98,98,98,98,59,70,61,98,98,98,98,45,73,64,61,98,40,98,98,98,98,98,98,98,
+98,98,98,98,98,45,46,64,60,60,60,61,98,98,98,98,98,98,98,98,98,84,98,98,98,98,98,45,46,47,98,98,40,98,98,98,98,98,98,98,
+98,98,98,98,98,45,64,61,98,98,98,31,32,32,33,98,98,98,98,98,98,84,98,98,98,98,35,59,70,61,98,98,40,98,98,98,98,98,98,98,
+98,98,98,98,31,79,47,98,98,98,31,79,46,73,47,98,98,98,98,98,31,69,33,98,98,98,38,98,40,98,98,31,69,33,98,98,31,32,33,98,
+98,98,98,98,45,46,66,41,41,41,96,46,46,46,66,41,41,41,41,41,82,91,66,41,41,41,80,41,80,41,41,96,110,66,41,41,82,73,47,98,
+98,98,98,98,59,60,61,98,98,98,45,64,60,65,78,33,98,98,98,98,59,70,61,98,98,98,40,98,38,98,98,45,124,47,98,98,59,60,61,98,
+98,98,98,98,98,98,98,98,31,32,79,47,98,45,46,47,98,98,35,98,98,84,98,98,62,41,77,98,76,41,55,95,60,61,98,98,98,98,98,98,
+98,98,98,98,98,98,98,31,79,64,60,61,98,45,91,47,98,98,39,98,98,84,98,98,53,98,98,98,98,98,98,40,98,98,98,98,98,98,98,98,
+98,98,98,98,98,98,98,45,91,47,98,98,98,59,60,61,98,98,84,98,31,81,41,41,67,32,33,98,98,98,98,40,98,98,98,98,98,98,98,98,
+98,98,98,98,98,98,98,59,60,61,98,98,98,98,98,98,98,31,69,32,79,47,98,98,45,73,47,98,98,98,31,69,33,98,98,98,98,98,98,98,
+98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,45,91,85,86,97,33,98,59,60,61,98,98,98,45,91,47,98,98,98,98,98,98,98,
+98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,98,59,60,99,100,101,61,98,98,98,98,98,98,98,59,60,61,98,98,98,98,98,98,98
+</data>
+ </layer>
+ <objectgroup name="impassable" opacity="0">
+  <object id="28" x="66.6667" y="130.303" width="266.515" height="74.5455">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="29" x="257.576" y="63.6364" width="757.576" height="77.6364">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="30" x="1011.65" y="60.6061" width="217.061" height="141.773">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="32" x="1218.18" y="30.303" width="248.485" height="46.8636">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="34" x="1460.61" y="60.6061" width="407.939" height="143.303">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="35" x="1854.55" y="63.6364" width="506.061" height="78.197">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="36" x="2356.14" y="91.4394" width="135.394" height="113.5">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="37" x="2483.38" y="184.848" width="52.9848" height="409.091">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="38" x="2356.11" y="563.667" width="152.985" height="81.7879">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="40" x="2034.95" y="626.303" width="326.152" height="219.5">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="41" x="1652.61" y="499.53" width="535.182" height="153.864">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="42" x="1652.58" y="590.909" width="216.5" height="126.152">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="43" x="1653.08" y="755.636" width="215.5" height="216.97">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="44" x="1815.15" y="819.742" width="117.091" height="152.894">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="46" x="1972.29" y="820.273" width="216.5" height="152.833">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="47" x="2160.61" y="821.212" width="92.3182" height="87.2879">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="51" x="2357.58" y="793.939" width="75.7576" height="51.3636">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="52" x="2420.71" y="822.242" width="39.3939" height="212.121">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="53" x="2229.36" y="950.015" width="21.0606" height="80.333">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="54" x="1972.29" y="1011.15" width="450.394" height="88.7576">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="55" x="1839.86" y="1076.85" width="178.167" height="23.5606">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="56" x="1460.17" y="1012.15" width="471.576" height="88.2879">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="57" x="1650.05" y="1093.44" width="218.061" height="379.288">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="58" x="1458.67" y="1268.23" width="473.106" height="216.03">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="59" x="1970.73" y="1269.7" width="198.97" height="215.061">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="60" x="2099.56" y="1080.32" width="48.4848" height="224.242">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="61" x="1395.03" y="1460.61" width="345.773" height="216.591">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="62" x="1458.67" y="1593.94" width="281.636" height="384.848">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="63" x="1396.53" y="1843.52" width="161.045" height="151.833">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="64" x="1460.67" y="1912.12" width="213.97" height="147.364">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="65" x="1651.42" y="1968.29" width="84.8485" height="57.3939">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="66" x="1717.68" y="1971.79" width="86.2576" height="86.2273">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="67" x="1844.98" y="1972.26" width="149.894" height="87.7576">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="68" x="1908.12" y="1844.02" width="151.394" height="151.833">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="69" x="1971.76" y="1715.71" width="87.7273" height="150.955">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="70" x="2035.89" y="1652.58" width="23.6212" height="95.9091">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="71" x="2163.17" y="1466.67" width="109.561" height="212.121">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="72" x="2101.03" y="1652.58" width="392.909" height="342.803">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="73" x="2165.2" y="1912.12" width="150.424" height="147.394">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="74" x="2163.7" y="2100.56" width="151.864" height="150.955">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="76" x="2036.92" y="2227.83" width="138.833" height="151.364">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="77" x="2184.85" y="2164.17" width="312.5" height="78.2576">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="78" x="2484.91" y="1978.79" width="42.3636" height="233.333">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="79" x="2100.56" y="2354.55" width="47.9242" height="193.939">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="81" x="1347.95" y="2548.52" width="780.318" height="11.0303"/>
+  <object id="82" x="1461.17" y="2485.35" width="471.076" height="66.1667">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="83" x="1397.5" y="2357.58" width="150.924" height="84.7879">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="84" x="1460.64" y="2415.15" width="87.2273" height="87.8788">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="85" x="1590.91" y="2228.33" width="403.439" height="85.7273">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="86" x="1716.24" y="2300" width="279.167" height="79.2273">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="87" x="1716.21" y="2369.7" width="216" height="124.242">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="88" x="1715.71" y="2099.56" width="86.2576" height="139.833">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="89" x="1790.91" y="2137.39" width="172.167" height="111.091">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="90" x="1843.95" y="2098.53" width="151.455" height="89.2879">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="91" x="2058.55" y="2062.05" width="25.3636" height="29.4242">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="92" x="2072.73" y="2150.45" width="24.2424" height="21.8333">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="93" x="2380.23" y="2060.05" width="39.0152" height="40.5152">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="94" x="1804.44" y="1805.5" width="38.0758" height="37.5455">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="95" x="1614.03" y="2382.2" width="35.5152" height="35.5152">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="96" x="2250.52" y="207" width="27.2121" height="28.2424">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="97" x="2261.61" y="292.939" width="31.303" height="25.2424">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="98" x="1351.05" y="1159.11" width="49.9242" height="49.9545">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="99" x="1461.14" y="2100.56" width="216.091" height="86.7273">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="100" x="1397" y="2164.2" width="147.424" height="149.894">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="101" x="1021.21" y="2163.64" width="334.273" height="129.652">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="102" x="1215.15" y="2245.45" width="139.803" height="70.6061">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="103" x="1204.62" y="2230.3" width="87.197" height="148.833">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="104" x="1012.15" y="2106.06" width="151.924" height="273.636">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="105" x="947.485" y="2101.03" width="344.833" height="22.7727">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="106" x="1163.64" y="2124.24" width="128.682" height="48.4848">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="108" x="957.576" y="2550.39" width="323.182" height="9.1515">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="109" x="626.394" y="2355.2" width="472.576" height="197.788">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="110" x="756.576" y="2163.7" width="88.7879" height="239.333">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="111" x="627.333" y="2290.47" width="142.364" height="106.5">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="112" x="390.909" y="2418.27" width="245.455" height="60.5152">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="113" x="242.424" y="2162.2" width="219.091" height="283.258">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="114" x="435.394" y="2099.06" width="89.2879" height="154.394">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="115" x="512.121" y="2099.56" width="140.803" height="89.2273">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="116" x="841.894" y="1996.32" width="42.9848" height="40.6061">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="118" x="230.303" y="1957.58" width="37.8333" height="224.242">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="119" x="257.576" y="1213.71" width="74.6667" height="781.667">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="120" x="303.03" y="1585.94" width="285.788" height="218.03">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="121" x="548.485" y="1586.44" width="168.106" height="154.864">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="122" x="706.97" y="1586.41" width="201.03" height="89.7576">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="123" x="754.576" y="1457.64" width="219.091" height="153.894">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="124" x="521.682" y="1356.52" width="29.3333" height="30.3333">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="125" x="533.333" y="1442.42" width="30.303" height="30.303">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="126" x="315.152" y="1076.29" width="209.53" height="153.394">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="127" x="563.667" y="1075.79" width="536.773" height="154.424">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="128" x="754.106" y="1218.18" width="346.773" height="139.242">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="129" x="1075.32" y="1267.73" width="217.061" height="344.864">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="130" x="1138.98" y="1460.61" width="216.97" height="216.561">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="131" x="1139.45" y="1662.17" width="153.894" height="398.348">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="132" x="947.545" y="1842.42" width="408.47" height="154.455">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="133" x="882.879" y="1779.35" width="305" height="153.394">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="134" x="948.045" y="1978.79" width="245.894" height="81.7273">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="135" x="756.106" y="1844.48" width="131.773" height="87.7273">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="136" x="498.5" y="1907.59" width="262.106" height="24.6818">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="137" x="498" y="1919.18" width="153.955" height="140.864">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="138" x="435.894" y="1972.26" width="85.3182" height="87.2879">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="139" x="630.303" y="1924.24" width="85.2576" height="71.6364">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="140" x="245.455" y="432.955" width="215.561" height="645.273">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="141" x="57.5758" y="166.667" width="84.2576" height="303.03">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="142" x="133.333" y="433.864" width="133.333" height="102.5">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="143" x="445.455" y="432.894" width="512.121" height="92.7879">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="144" x="627.273" y="466.667" width="345.864" height="121.652">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="145" x="756.045" y="371.258" width="217.061" height="155.333">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="146" x="820.212" y="307.591" width="397.97" height="88.7879">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="147" x="1140.42" y="244.515" width="86.7879" height="215.5">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="148" x="1012.12" y="243.985" width="139.394" height="95.4091">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="149" x="651.424" y="204.379" width="39.5758" height="39.197">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="150" x="461.015" y="331.773" width="37.6061" height="39.0152">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="151" x="523.652" y="587.758" width="41.1364" height="41.6364">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="152" x="648.955" y="651.955" width="28.803" height="30.803">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="153" x="660.576" y="740.864" width="30.3333" height="23.8333">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="154" x="715.121" y="780.667" width="41.0152" height="41.1061">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="155" x="626.833" y="1011.12" width="665.515" height="88.3485">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="156" x="818.773" y="577.788" width="154.833" height="440.394">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="157" x="960.606" y="755.576" width="332.212" height="266.636">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="158" x="1033.24" y="462.576" width="30.4545" height="27.8636">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="159" x="1044.86" y="548.485" width="30.9242" height="25.8636">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="160" x="1139.89" y="501" width="86.8485" height="268.697">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="161" x="1221.21" y="691.439" width="198.909" height="217.061">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="162" x="1459.17" y="784.561" width="206.909" height="188.076">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="163" x="1403.03" y="756.606" width="209.5" height="152.394">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="164" x="1268.76" y="500.03" width="343.303" height="150.894">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="165" x="1460.17" y="596.97" width="151.864" height="119.621">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="166" x="1268.26" y="307.652" width="343.242" height="151.773">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="167" x="1267.79" y="244.515" width="87.697" height="101.818">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="168" x="1460.67" y="243.985" width="407.848" height="181.106">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="169" x="1652.11" y="307.682" width="536.182" height="152.803">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="170" x="1267.5" y="2488.5" width="14.1667" height="70.5">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="171" x="1338" y="2489" width="17.8333" height="71">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="175" x="1534" y="2263" width="20.5" height="18.5">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="177" x="1581.5" y="2263.5" width="20.5" height="18.5">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="178" x="1250.17" y="2529.33" width="24.3333" height="22.5">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="179" x="1258.5" y="2515.5" width="10" height="22.8333">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="180" x="1341.17" y="2540.83" width="44.3333" height="16.5">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="181" x="1341.5" y="2529.33" width="35.6667" height="13.1667">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="182" x="1906.15" y="918.242" width="32.591" height="19.894">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="183" x="1966.15" y="918.742" width="32.591" height="19.894">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="184" x="1229.17" y="2537.33" width="51.6667" height="20.5">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="185" x="1341.83" y="2504" width="25.6667" height="27.8333">
+   <properties>
+    <property name="Impassable" type="bool" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="canWalk" opacity="0">
+  <object id="186" x="1282.33" y="2488" width="55.6667" height="72.3333">
+   <properties>
+    <property name="canWalk" type="bool" value="false"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
