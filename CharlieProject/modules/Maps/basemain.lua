@@ -18,7 +18,7 @@ return {
       tileheight = 64,
       spacing = 0,
       margin = 0,
-      image = "../yna_main.png",
+      image = "../../assets/Image/main.png",
       imagewidth = 1280,
       imageheight = 640,
       tileoffset = {

@@ -406,7 +406,7 @@ return {
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      image = "village.png",
+      image = "../../assets/Image/village.png",
       properties = {}
     },
     {

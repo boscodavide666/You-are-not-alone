@@ -6,7 +6,7 @@ local clue03 = require "modules/Clues/clue03"
 local clue04 = require "modules/Clues/clue04"
 local clue05 = require "modules/Clues/clue05"
 
- player = {}
+player = {}
 
 player.location = 0
 player.size = 0
@@ -16,7 +16,7 @@ player.canMove = nil
 
 function player.load()
 
-  spritesheet = love.graphics.newImage("assets/Image/player.png")
+  spritesheet = love.graphics.newImage("assets/Image/Characters/player.png")
   player.speed = 10
   player.location = 0
   player.size = 64

@@ -11,10 +11,10 @@ local timer = 0
 local timecap = 0.6
 
 function enemy.load(x, y)
-spritesheet = love.graphics.newImage("assets/Image/ghost.png")
+spritesheet = love.graphics.newImage("assets/Image/Monsters/man_eater_flower.png")
 enemy.speed = 8
-enemy.sizeX = 40
-enemy.sizeY = 46
+enemy.sizeX = 60
+enemy.sizeY = 76
 enemy.dir = 0
 enemy.canMove = true
 ghost = sodapop.newAnimatedSprite()
