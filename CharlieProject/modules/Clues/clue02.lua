@@ -28,7 +28,7 @@ clue02Sprite.x, clue02Sprite.y = x, y
 end
 
 function clue02.update(dt, _x, _y)
-  if (_x >= clue02Sprite.x - 20 and _x <= clue02Sprite.x + clue02.size) and (_y >= clue02Sprite.y and _y <= clue02Sprite.y + clue02.size ) then
+  if (_x >= clue02Sprite.x - 20 and _x <= clue02Sprite.x + clue02.size) and (_y >= clue02Sprite.y and _y <= clue02Sprite.y - clue02.size ) then
   clue02.isOver = true
   clue02.setRead()
   else

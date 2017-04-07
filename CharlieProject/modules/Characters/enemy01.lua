@@ -10,7 +10,7 @@ enemy01.canMove = nil
 local timer  = 0
 local timecap = 1
 
-function enemy01.load(x, y)
+function enemy01.load(x, y, x1, y1)
 spritesheet = love.graphics.newImage("assets/Image/Monsters/eyeball.png")
 enemy01.speed = 8
 enemy01.sizeX = 32
