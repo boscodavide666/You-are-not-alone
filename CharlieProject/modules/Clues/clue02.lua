@@ -45,7 +45,7 @@ end
 
 function clue02.draw(x, y)
   if clue02.isOver  then
-  love.graphics.printf(clue02.text, x - 500, y + 100, love.graphics.getWidth(), "left")
+  love.graphics.printf(clue02.text, x, y, love.graphics.getWidth(), "left")
 end
 clue02Sprite:draw()
 end

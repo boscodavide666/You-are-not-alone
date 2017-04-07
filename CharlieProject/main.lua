@@ -153,14 +153,13 @@ treetop:draw()
 end
 
 if game.isTalking then
-love.graphics.printf(game.dialogue(game.interact(dt, mainChar.x, mainChar.y)), mainChar.x - 320, mainChar.y + 200, love.graphics.getWidth(), "left")
+love.graphics.printf(game.dialogue(game.interact(dt, mainChar.x, mainChar.y)), camera.x, camera.y, love.graphics.getWidth(), "left")
 end
 
 if game.isLightable and lightPower.isOn then
 lightPower.draw()
 elseif game.isLightable and lightPower.isOn == false then
 lightPower.drawDarkness(map.myMap.width*map.myMap.tilewidth, map.myMap.height*map.myMap.tileheight)
-love.graphics.printf("Premi spazio per usare il tuo potere", mainChar.x, mainChar.y, love.graphics.getWidth(), "center")
 end
 
 if player.location == 0 then
@@ -168,14 +167,13 @@ if player.location == 0 then
 end
 
 if game.isDungeon and lightPower.isOn == false then
-  love.graphics.printf("Spegni la luce per vedere gli indizi", mainChar.x - 320, mainChar.y - 200, love.graphics.getWidth(), "left")
-clue01.draw(mainChar.x, mainChar.y)
-clue02.draw(mainChar.x, mainChar.y)
-clue03.draw(mainChar.x, mainChar.y)
-clue04.draw(mainChar.x, mainChar.y)
-clue05.draw(mainChar.x, mainChar.y)
+clue01.draw(camera.x, camera.y)
+clue02.draw(camera.x, camera.y)
+clue03.draw(camera.x, camera.y)
+clue04.draw(camera.x, camera.y)
+clue05.draw(camera.x, camera.y)
   if clue01.isRead and clue02.isRead and clue03.isRead and clue04.isRead and clue05.isRead then
-  love.graphics.printf("Ci dev'essere qualcosa sotto! Meglio chiarire le cose con il capovillaggio!", mainChar.x - 320, mainChar.y + 200, love.graphics.getWidth(), "left")
+  love.graphics.printf("Ci dev'essere qualcosa sotto! Meglio chiarire le cose con il capovillaggio!", camer.x, mainChar.y + 200, love.graphics.getWidth(), "left")
 end
 end
 

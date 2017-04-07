@@ -55,10 +55,10 @@ elseif (x1 >= 1260 and x1 <= 1272) and (y1 >= 1270 and y1 <= 1310) then
 elseif (x1 >= 1320 and x1 <= 1340) and (y1 >= 860 and y1 <= 900 ) then
         game.isTalking =true
       return 4
-elseif (x1 >= 890 and x1 <= 960) and (y1 >= 60 and y1 <= 70 )  and game.canGo == false then
+elseif (x1 >= 890 and x1 <= 980) and (y1 >= 50 and y1 <= 75 )  and game.canGo == false then
       game.isTalking =true
       return 5
-elseif (x1 >= 890 and x1 <= 960) and (y1 >= 60 and y1 <= 70 ) and game.canGo == true then
+elseif (x1 >= 890 and x1 <= 980) and (y1 >= 50 and y1 <= 75 ) and game.canGo == true then
       game.isTalking =true
       return 6
     else
