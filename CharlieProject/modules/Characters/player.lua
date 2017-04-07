@@ -65,6 +65,12 @@ function player.update(dt, x1, y1)
   nextX, nextY = mainChar.x, mainChar.y
   canMove = true
 
+    if love.keyboard.isDown("a") then
+      player.speed = 8
+    else
+      player.speed = 5
+    end
+
     if(love.keyboard.isDown("up")) then
       mainChar:switch('walk-up', true)
       nextY = nextY - player.speed
