@@ -71,7 +71,7 @@ end
 function enemy03.update(dt)
   if timer >= 0 then
     ghost03.y = ghost03.y + enemy03.speed
-    timer = timer - dt
+    timer = timer - 0.02
   elseif timer <= 0 then
     timer = timecap
     enemy03.speed = - enemy03.speed

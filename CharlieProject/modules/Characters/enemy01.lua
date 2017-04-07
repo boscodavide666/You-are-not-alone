@@ -33,10 +33,13 @@ ghost01.x, ghost01.y = x, y
 timer  = timecap
 end
 
+
+
 function enemy01.update(dt)
+
 if timer >= 0 then
   ghost01.x = ghost01.x + enemy01.speed
-  timer = timer - dt
+  timer = timer - 0.02
 elseif timer <= 0 then
   timer = timecap
   enemy01.speed = - enemy01.speed

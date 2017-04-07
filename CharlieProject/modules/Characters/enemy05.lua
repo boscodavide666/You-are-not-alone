@@ -73,7 +73,7 @@ function enemy05.update(dt)
 
   if timer >= 0 then
     ghost05.x = ghost05.x + enemy05.speed
-    timer = timer - dt
+    timer = timer - 0.02
   elseif timer <= 0 then
     timer = timecap
     enemy05.speed = - enemy05.speed
