@@ -10,7 +10,8 @@ In un clima da caccia alle streghe un piccolo villaggio subisce le angherie di u
  * Freccia sinistra : muoviti a sinistra
  * Freccia su : muoviti su
  * Freccia giù : muoviti giù
- * Spazio : accendi e spegni la luce.
+ * Spazio : accendi e spegni la luce
+ * a : tieni premuto per aumentare la tua velocità
  
 # Scopo del gioco
 Addentrati nel dungeon e lanciati all'esplorazione per scoprire cosa sta succedendo!
