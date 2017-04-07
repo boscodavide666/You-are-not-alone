@@ -28,7 +28,6 @@ end
 
 function clue01.update(dt, _x, _y)
 if (_x >= clue01Sprite.x - 20 and _x <= clue01Sprite.x + clue01.size) and (_y >= clue01Sprite.y and _y <= clue01Sprite.y + clue01.size ) then
-sound:play()
 clue01.isOver = true
 clue01.setRead()
 else
