@@ -18,7 +18,7 @@ return {
       tileheight = 64,
       spacing = 0,
       margin = 0,
-      image = "../pause.png",
+      image = "../../assets/Image/pause.png",
       imagewidth = 640,
       imageheight = 640,
       tileoffset = {

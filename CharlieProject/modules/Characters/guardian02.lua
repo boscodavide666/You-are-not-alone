@@ -7,7 +7,7 @@ guardian02.size = 0
 
 
 function guardian02.load(x, y)
-spritesheet = love.graphics.newImage("/assets/Image/Guardian.png")
+spritesheet = love.graphics.newImage("/assets/Image/Characters/Guardian.png")
 
 guardian02.size = 64
 guardian02Char = sodapop.newAnimatedSprite()

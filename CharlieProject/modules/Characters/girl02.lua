@@ -7,7 +7,7 @@ girl02.size = 0
 
 
 function girl02.load(x, y)
-spritesheet = love.graphics.newImage("/assets/Image/Girl.png")
+spritesheet = love.graphics.newImage("/assets/Image/Characters/Girl.png")
 
 girl02.size = 64
 girl02Char = sodapop.newAnimatedSprite()

@@ -8,7 +8,7 @@ return {
   height = 40,
   tilewidth = 64,
   tileheight = 64,
-  nextobjectid = 184,
+  nextobjectid = 187,
   properties = {},
   tilesets = {
     {
@@ -18,7 +18,7 @@ return {
       tileheight = 64,
       spacing = 0,
       margin = 0,
-      image = "../base.png",
+      image = "../../assets/Image/dungtile.png",
       imagewidth = 896,
       imageheight = 640,
       tileoffset = {
@@ -91,8 +91,8 @@ return {
     {
       type = "objectgroup",
       name = "impassable",
-      visible = false,
-      opacity = 1,
+      visible = true,
+      opacity = 0,
       offsetx = 0,
       offsety = 0,
       draworder = "topdown",
@@ -2068,7 +2068,7 @@ return {
           shape = "rectangle",
           x = 1267.5,
           y = 2488.5,
-          width = 12.5,
+          width = 14.1667,
           height = 70.5,
           rotation = 0,
           visible = true,
@@ -2083,12 +2083,12 @@ return {
           shape = "rectangle",
           x = 1338,
           y = 2489,
-          width = 16.5,
+          width = 17.8333,
           height = 71,
           rotation = 0,
           visible = true,
           properties = {
-            ["Impassable"] = false
+            ["Impassable"] = true
           }
         },
         {
@@ -2126,10 +2126,10 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1239.5,
-          y = 2537,
-          width = 26,
-          height = 11.5,
+          x = 1250.17,
+          y = 2529.33,
+          width = 24.3333,
+          height = 22.5,
           rotation = 0,
           visible = true,
           properties = {
@@ -2141,10 +2141,10 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1255.5,
-          y = 2522.5,
+          x = 1258.5,
+          y = 2515.5,
           width = 10,
-          height = 11.5,
+          height = 22.8333,
           rotation = 0,
           visible = true,
           properties = {
@@ -2156,10 +2156,10 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1357.5,
-          y = 2535.5,
-          width = 26,
-          height = 11.5,
+          x = 1341.17,
+          y = 2540.83,
+          width = 44.3333,
+          height = 16.5,
           rotation = 0,
           visible = true,
           properties = {
@@ -2171,10 +2171,10 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 1358.5,
-          y = 2522,
-          width = 10,
-          height = 11.5,
+          x = 1341.5,
+          y = 2529.33,
+          width = 35.6667,
+          height = 13.1667,
           rotation = 0,
           visible = true,
           properties = {
@@ -2209,6 +2209,63 @@ return {
           visible = true,
           properties = {
             ["Impassable"] = true
+          }
+        },
+        {
+          id = 184,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1229.17,
+          y = 2537.33,
+          width = 51.6667,
+          height = 20.5,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["Impassable"] = true
+          }
+        },
+        {
+          id = 185,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1341.83,
+          y = 2504,
+          width = 25.6667,
+          height = 27.8333,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["Impassable"] = true
+          }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      name = "canWalk",
+      visible = true,
+      opacity = 0,
+      offsetx = 0,
+      offsety = 0,
+      draworder = "topdown",
+      properties = {},
+      objects = {
+        {
+          id = 186,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1282.33,
+          y = 2488,
+          width = 55.6667,
+          height = 72.3333,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["canWalk"] = false
           }
         }
       }

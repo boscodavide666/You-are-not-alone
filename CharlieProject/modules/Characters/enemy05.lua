@@ -11,7 +11,7 @@ local timer = 0
 local timecap = 3
 
 function enemy05.load(x, y)
-spritesheet = love.graphics.newImage("assets/Image/ghost.png")
+spritesheet = love.graphics.newImage("assets/Image/Monsters/ghost.png")
 enemy05.speed = 20
 enemy05.sizeX = 40
 enemy05.sizeY = 46

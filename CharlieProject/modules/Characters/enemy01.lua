@@ -11,49 +11,14 @@ local timer  = 0
 local timecap = 1
 
 function enemy01.load(x, y)
-spritesheet = love.graphics.newImage("assets/Image/ghost.png")
+spritesheet = love.graphics.newImage("assets/Image/Monsters/eyeball.png")
 enemy01.speed = 8
-enemy01.sizeX = 40
-enemy01.sizeY = 46
+enemy01.sizeX = 32
+enemy01.sizeY = 38
 enemy01.dir = 0
 enemy01.canMove = true
 ghost01 = sodapop.newAnimatedSprite()
 
-ghost01:addAnimation('walk-right', {
-  image = spritesheet,
-  frameWidth = enemy01.sizeX,
-  frameHeight = enemy01.sizeY,
-  frames = {
-    {1, 4, 3, 4, .1}
-  }
-})
-
-ghost01:addAnimation('walk-left', {
-  image = spritesheet,
-  frameWidth = enemy01.sizeX,
-  frameHeight = enemy01.sizeY,
-  frames = {
-    {1, 2, 3, 2, .1}
-  }
-})
-
-ghost01:addAnimation('walk-up', {
-  image = spritesheet,
-  frameWidth = enemy01.sizeX,
-  frameHeight = enemy01.sizeY,
-  frames = {
-    {1, 1, 3, 1, .1}
-  }
-})
-
-ghost01:addAnimation('walk-down', {
-  image = spritesheet,
-  frameWidth = enemy01.sizeX,
-  frameHeight = enemy01.sizeY,
-  frames = {
-    {1, 3, 3, 3, .2}
-  }
-})
 
 ghost01:addAnimation('idle', {
   image = spritesheet,

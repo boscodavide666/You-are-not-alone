@@ -7,7 +7,7 @@ villageChief.size = 0
 
 
 function villageChief.load(x, y)
-spritesheet = love.graphics.newImage("assets/Image/Sage.png")
+spritesheet = love.graphics.newImage("assets/Image/Characters/Sage.png")
 villageChief.size = 64
 villageChiefChar = sodapop.newAnimatedSprite()
 

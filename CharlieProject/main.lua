@@ -21,8 +21,10 @@ local clue03 = require "modules/Clues/clue03"
 local clue04 = require "modules/Clues/clue04"
 local clue05 = require "modules/Clues/clue05"
 local villageChief = require "modules/Characters/villageChief"
-font = love.graphics.newFont("assets/font/Cabanyal-Z.ttf", 24)
+font = love.graphics.newFont("assets/font/Cabanyal-Z.ttf", 20)
 local ended = love.graphics.newImage("assets/Image/gameover.png")
+local dungSt = love.audio.newSource("assets/soundz/ot2.mp3", "stream")
+local otherSt = love.audio.newSource("assets/soundz/Ot1.mp3", "stream")
 
 
 function love.load(arg)
@@ -48,27 +50,34 @@ clue02.load(2432, 2112)
 clue03.load(512, 704)
 clue04.load(2304, 320)
 clue05.load(320, 256)
-
 treetop = sti("modules/Maps/treetop.lua")
 end
 
 
 function love.update(dt)
-  map.update(dt, player.location)
-  game.update(dt, player.location)
-  player.update(dt)
+map.update(dt, player.location)
+game.update(dt, player.location)
+player.update(dt)
 
-  if game.isVillage then
-    boy01.update(dt)
-    boy02.update(dt)
-    girl.update(dt)
-    villageChief.update(dt)
-    guardian01.update(dt)
-    guardian02.update(dt)
-    game.interact(dt, mainChar.x, mainChar.y)
-    end
+if game.isDungeon then
+  dungSt:play()
+  otherSt:stop()
+else
+  otherSt:play()
+  dungSt:stop()
+end
 
-  if game.isDungeon then
+if game.isVillage then
+  boy01.update(dt)
+  boy02.update(dt)
+  girl.update(dt)
+  villageChief.update(dt)
+  guardian01.update(dt)
+  guardian02.update(dt)
+  game.interact(dt, mainChar.x, mainChar.y)
+end
+
+if game.isDungeon then
   enemy.update(dt)
   enemy01.update(dt)
   enemy02.update(dt, mainChar.x)
@@ -86,14 +95,15 @@ function love.update(dt)
   clue03.update(dt, mainChar.x, mainChar.y)
   clue04.update(dt, mainChar.x, mainChar.y)
   clue05.update(dt, mainChar.x, mainChar.y)
-  if clue01.isRead and clue02.isRead and clue03.isRead and clue04.isRead and clue05.isRead then
-    game.canGo = false
-    if (mainChar.x >= 1280 and mainChar.x <= 1340) and (mainChar.y >= 2460) then
-      love.timer.sleep(1)
-      game.isEnd = true
+    if clue01.isRead and clue02.isRead and clue03.isRead and clue04.isRead and clue05.isRead then
+      game.canGo = false
+        if (mainChar.x >= 1280 and mainChar.x <= 1340) and (mainChar.y >= 2460) then
+          love.timer.sleep(1)
+          game.isEnd = true
+        end
     end
 end
-end
+
   lightPower.update(mainChar.x, mainChar.y)
   camera.setPosition(mainChar.x-love.graphics.getWidth()/2, mainChar.y- love.graphics.getHeight()/2, map.sxBorder, map.dxBorder, map.downBorder, map.upBorder)
 
@@ -102,49 +112,48 @@ end
     player.speed = 0
     enemy01.speed = 0
   end
-  if timer < 0 then
-  love.event.quit()
-  end
 
+  if timer < 0 then
+    love.event.quit()
+  end
 end
 
 function love.draw()
 camera.set()
 love.graphics.setFont(font)
 map.draw()
-player.draw()
-
-if game.isEnd then
-love.graphics.print("isEnd", mainChar.x, mainChar.y + 64)
-end
 
 if game.isDungeon then
-enemy.draw()
-enemy01.draw()
-enemy02.draw()
-enemy03.draw()
-enemy04.draw()
-enemy05.draw()
+  enemy.draw()
+  enemy01.draw()
+  enemy02.draw()
+  enemy03.draw()
+  enemy04.draw()
+  enemy05.draw()
 end
 
 if game.isVillage then
-boy01.draw()
-boy02.draw()
-girl.draw()
-villageChief.draw()
-guardian01.draw()
-guardian02.draw()
-treetop:draw()
-  if game.isTalking then
-  love.graphics.printf(game.dialogue(game.interact(dt, mainChar.x, mainChar.y)), mainChar.x - 320, mainChar.y + 200, love.graphics.getWidth(), "left")
-  end
+  boy01.draw()
+  boy02.draw()
+  girl.draw()
+  villageChief.draw()
+  guardian01.draw()
+  guardian02.draw()
+end
+
+player.draw()
+if game.isVillage then
+  treetop:draw()
+end
+
+if game.isTalking then
+  love.graphics.printf(game.dialogue(game.interact(dt, mainChar.x, mainChar.y)), camera.x, camera.y, love.graphics.getWidth(), "left")
 end
 
 if game.isLightable and lightPower.isOn then
 lightPower.draw()
 elseif game.isLightable and lightPower.isOn == false then
 lightPower.drawDarkness(map.myMap.width*map.myMap.tilewidth, map.myMap.height*map.myMap.tileheight)
-love.graphics.printf("Premi spazio per usare il tuo potere", mainChar.x, mainChar.y, love.graphics.getWidth(), "center")
 end
 
 if player.location == 0 then
@@ -152,44 +161,43 @@ if player.location == 0 then
 end
 
 if game.isDungeon and lightPower.isOn == false then
-  love.graphics.printf("Spegni la luce per vedere gli indizi", mainChar.x - 320, mainChar.y - 200, love.graphics.getWidth(), "left")
-clue01.draw(mainChar.x, mainChar.y)
-clue02.draw(mainChar.x, mainChar.y)
-clue03.draw(mainChar.x, mainChar.y)
-clue04.draw(mainChar.x, mainChar.y)
-clue05.draw(mainChar.x, mainChar.y)
-  if clue01.isRead and clue02.isRead and clue03.isRead and clue04.isRead and clue05.isRead then
-  love.graphics.printf("Ci dev'essere qualcosa sotto! Meglio chiarire le cose con il capovillaggio!", mainChar.x - 320, mainChar.y + 200, love.graphics.getWidth(), "left")
-end
+  clue01.draw(camera.x, camera.y)
+  clue02.draw(camera.x, camera.y)
+  clue03.draw(camera.x, camera.y)
+  clue04.draw(camera.x, camera.y)
+  clue05.draw(camera.x, camera.y)
+    if clue01.isRead and clue02.isRead and clue03.isRead and clue04.isRead and clue05.isRead then
+      love.graphics.printf("Ci dev'essere qualcosa sotto! Meglio chiarire le cose con il capovillaggio!", camera.x, camera.y + 200, love.graphics.getWidth(), "left")
+    end
 end
 
 if game.isEnd then
-  love.graphics.draw(ended, mainChar.x - 320, mainChar.y - 540, 0, 1, 1)
+  love.graphics.draw(ended, camera.x, camera.y, 0, 1, 1)
   love.graphics.printf("Quando il nostro eroe si accorse dell'inganno era ormai troppo tardi, e come molti avventurieri ignari prima di lui, cadde vittima della perfidia degli abitanti del villaggio.\nAbitanti che altro non erano se non una banda di briganti e criminali, che attirava avventurieri  inesperti con l'inganno per poi chiuderli nei sotterranei e derubarli dopo la loro morte per stenti!\n(Che bastardi)", mainChar.x - 320, mainChar.y - 520, 640, "center")
-
 end
-camera.unset()
 
+camera.unset()
 end
 
  function love.keypressed(key)
-   if player.location == -1 and key == "y" then
-     love.event.quit()
-   elseif player.location == -1 and key == "n" then
-     player.location = 0
-     mainChar.x = 640
-     mainChar.y = 320
-   end
+ if player.location == -1 and key == "y" then
+   love.event.quit()
+ elseif player.location == -1 and key == "n" then
+   player.location = 0
+   mainChar.x = 640
+   mainChar.y = 320
+ end
 
-   if key == "space" then
-   if game.isLightable then
+ if key == "space" then
+  if game.isLightable then
      if lightPower.isOn then
       lightPower.isOn = false
-   else
+    else
      lightPower.isOn = true
-   end
-   end
- end
+    end
+  end
+end
+--da cancellare
 if key == "d" then
   player.location = 2
   mainChar.x = 2560 / 2 + player.size
