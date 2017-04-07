@@ -173,7 +173,7 @@ clue03.draw(camera.x, camera.y)
 clue04.draw(camera.x, camera.y)
 clue05.draw(camera.x, camera.y)
   if clue01.isRead and clue02.isRead and clue03.isRead and clue04.isRead and clue05.isRead then
-  love.graphics.printf("Ci dev'essere qualcosa sotto! Meglio chiarire le cose con il capovillaggio!", camer.x, mainChar.y + 200, love.graphics.getWidth(), "left")
+  love.graphics.printf("Ci dev'essere qualcosa sotto! Meglio chiarire le cose con il capovillaggio!", camera.x, camera.y + 200, love.graphics.getWidth(), "left")
 end
 end
 
