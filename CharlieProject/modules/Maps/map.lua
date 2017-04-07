@@ -9,7 +9,6 @@ map.upBorder = 0
 map.downBorder = 0
 
 function map.load()
-
   map.myMap = sti("modules/Maps/main.lua")
   map.sxBorder = 0
   map.dxBorder = map.myMap.width * map.myMap.tilewidth - love.graphics.getWidth()

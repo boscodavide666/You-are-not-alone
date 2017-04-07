@@ -45,20 +45,20 @@ if game.isVillage then
     if (x1 >= 360 and x1 <= 420) and (y1 >= 930 and y1 <= 980 ) then
     game.isTalking =true
     return 1
-elseif (x1 >= 1550 and x1 <= 1580) and (y1 >= 1400 and y1 <= 1430 ) then
+elseif (x1 >= 1540 and x1 <= 1580) and (y1 >= 1400 and y1 <= 1430 ) then
     game.isTalking =true
     game.setCanGo()
     return 2
-elseif (x1 >= 1260 and x1 <= 1272) and (y1 >= 1270 and y1 <= 1310) then
+elseif (x1 >= 1260 and x1 <= 1280) and (y1 >= 1270 and y1 <= 1310) then
       game.isTalking =true
     return 3
 elseif (x1 >= 1320 and x1 <= 1340) and (y1 >= 860 and y1 <= 900 ) then
         game.isTalking =true
       return 4
-elseif (x1 >= 890 and x1 <= 980) and (y1 >= 50 and y1 <= 75 )  and game.canGo == false then
+elseif (x1 >= 890 and x1 <= 980) and (y1 >= 40 and y1 <= 75 )  and game.canGo == false then
       game.isTalking =true
       return 5
-elseif (x1 >= 890 and x1 <= 980) and (y1 >= 50 and y1 <= 75 ) and game.canGo == true then
+elseif (x1 >= 890 and x1 <= 980) and (y1 >= 40 and y1 <= 75 ) and game.canGo == true then
       game.isTalking =true
       return 6
     else

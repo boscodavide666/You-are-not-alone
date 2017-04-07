@@ -906,7 +906,7 @@
     <property name="Impassable" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="246" x="1576" y="1400" width="24" height="72">
+  <object id="246" x="1552" y="1400" width="48" height="72">
    <properties>
     <property name="Impassable" type="bool" value="true"/>
    </properties>
